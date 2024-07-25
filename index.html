@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="milton vuong">
+  <title>Contacts</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div>
+    <h1>Contacts List</h1>
+    <p>This is your list of stored contacts.</p>
+    <table id="ContactsArray"></table>
+  </div>
+
+  <script>
+    // build contact array
+    const contacts = [`Arnold`, `Sly`, `Dwayne`, `Vin`, `JCVD`, `Steven`];
+    // build table from contact array
+    let output = ``;
+    contacts.forEach(showArray);
+    function showArray(item, index) {
+      output += `<tr><td>${index}:</td><td class="name">${item}</td></tr>`;
+    }
+    // inject table into html
+    document.getElementById(`ContactsArray`).innerHTML = `<table><tr><th>Slot #</th><th>Number</th>${output}</table>`;
+  </script>
+
+  <script>
+    // start of search script
+    let again = `y`
+    while (again == `y`) {
+      // ask user for slot number to lookup
+      let search = prompt(`What slot number would you like to check?`);
+      while (again == `y`) {
+        // check if slot number is valid
+        if ((search == 0 || search == 1 || search == 2 || search == 3 || search == 4 || search == 5) && search !== ``) {
+          alert(`You selected ${contacts[search]}.`);
+          again = `n`;
+        }
+        // prompt user again if invalid input is provided
+        else {
+          search = prompt(search + ` is not a valid slot number. Please select a new slot.`);
+        }
+      }
+      // prompt user if they want to search for another slot
+      again = prompt(`Would you like to check another slot? (y/n)`);
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+
+</html>

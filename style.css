@@ -1,0 +1,35 @@
+html {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding-top: 10%;
+  justify-content: center;
+  color: darkblue;
+}
+
+body {
+justify-content: center;}
+
+div {
+  padding: 40px;
+  background-color: lightgrey;
+  width: fit-content;
+  margin: auto;
+  border-radius: 6px;
+}
+table {
+  border: 1px solid darkblue;
+  margin: auto;
+}
+
+th,
+td {
+  text-align: center;
+  border: solid 1px;
+  color: darkblue;
+  padding: 4px 8px 4px 8px;
+}
+
+.name {
+  text-align: left;
+}
